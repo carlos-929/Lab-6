@@ -2,6 +2,9 @@ def encode_password(password):
     return ''.join(str((int(digit) + 3) % 10) for digit in password)
 
 
+def decode_password(password):
+    return ''.join(str((int(digit) - 3) % 10) for digit in password)
+
 def menu():
     while True:
         print("\nMenu")
