@@ -13,14 +13,11 @@ def menu():
             choice = int(input("Please enter an option: "))
             if choice == 1:
                 password = input("Please enter your password to encode: ")
-                if not password.isdigit() or len(password) != 8:
+                if not password.isdigit() and len(password) != 8:
                     raise ValueError("Password must be an 8-digit integer.")
                 encoded_password = encode_password(password)
                 print("Your password has been encoded and stored!")
             elif choice == 2:
-                encoded_password = input("The encoded password is: ")
-                if not encoded_password.isdigit() or len(encoded_password) != 8:
-                    raise ValueError("Encoded password must be an 8-digit integer.")
                 original_password = decode_password(encoded_password)
                 print(f"The encoded password is {encoded_password}, and the original password is {original_password}.")
             elif choice == 3:
